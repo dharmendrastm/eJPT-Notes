@@ -1,129 +1,318 @@
-# EJPT — Consolidated Notes (Brief Description)
+# 🛡️ eJPT — Consolidated Study Notes
 
-This document provides a **brief yet comprehensive overview** of each EJPT module — covering every major stage of penetration testing, tools, and concepts.
-
----
-
-## 1. Information Gathering
-
-This is the **first step** in any penetration test. It focuses on collecting as much information as possible about the target without actively engaging it. Techniques include **OSINT (Open Source Intelligence)**, searching for domain info, IP addresses, email leaks, social media data, and technologies used. Tools like **whois, nslookup, Maltego, Recon-ng, Shodan, and Google Dorks** are commonly used.
-
-**Goal:** Build an intelligence profile of the target before scanning or attacking.
-
-**Link:** [https://dharmendrastm.medium.com/ejpt-1-1-information-gathering-0423a9bbc06e](https://dharmendrastm.medium.com/ejpt-1-1-information-gathering-0423a9bbc06e)
+> **eJPT** (eLearnSecurity Junior Penetration Tester) — A practical, entry-level certification covering the full penetration testing lifecycle.
 
 ---
 
-## 2. Footprinting & Scanning
+## 📌 About This Repository
 
-After gathering information, the next phase involves **active probing** of the target system. You identify open ports, services, and operating systems. Tools like **Nmap, Masscan, and Netdiscover** are used to perform **port scanning, OS detection, and service enumeration**. This step helps create a clear attack surface.
+This repo contains **consolidated notes** for every major module of the eJPT certification. Each section covers the core concepts, tools, and techniques required to pass the exam and apply skills in real-world ethical hacking engagements.
 
-**Goal:** Map the target network and identify potential entry points.
-
-**Link:** [https://dharmendrastm.medium.com/ejpt-1-2-footprinting-scanning-f2f49b9564f5](https://dharmendrastm.medium.com/ejpt-1-2-footprinting-scanning-f2f49b9564f5)
+Whether you're just starting out in cybersecurity or preparing for your eJPT exam — these notes have you covered.
 
 ---
 
-## 3. Enumeration
+## 📂 Module Index
 
-Enumeration is a **deeper level of interaction** with the target. It involves extracting usernames, shares, services, and version details from open ports. Common protocols include **SMB, SNMP, DNS, LDAP, FTP, and HTTP**. Tools like **enum4linux, SNMPwalk, rpcclient, and Dirbuster** are used.
-
-**Goal:** Discover valuable information for exploitation (e.g., usernames, directories, or misconfigurations).
-
-**Link:** [https://dharmendrastm.medium.com/ejpt-1-3-enumeration-bf658c341ac1](https://dharmendrastm.medium.com/ejpt-1-3-enumeration-bf658c341ac1)
-
----
-
-## 4. Vulnerability Assessment
-
-In this stage, testers **identify and evaluate vulnerabilities** in systems or networks. Tools like **Nessus, OpenVAS, and Nmap scripts** are used to detect CVEs and weaknesses. The focus is on classifying vulnerabilities based on severity (Critical, High, Medium, Low).
-
-**Goal:** Find potential vulnerabilities before attempting exploitation.
-
-**Link:** [https://dharmendrastm.medium.com/ejpt-1-4-vulnerability-assessment-85ed97372f20](https://dharmendrastm.medium.com/ejpt-1-4-vulnerability-assessment-85ed97372f20)
-
----
-
-## 5. Auditing Fundamentals
-
-This module covers how to **analyze and assess security controls** in an organization. It focuses on **log analysis, compliance checks, and auditing tools**. Security auditing ensures all configurations meet best practices and policies.
-
-**Goal:** Understand how auditors review systems and ensure data integrity.
-
-**Link:** [https://dharmendrastm.medium.com/ejpt-2-1-auditing-fundamentals-d59d9b6d5bd1](https://dharmendrastm.medium.com/ejpt-2-1-auditing-fundamentals-d59d9b6d5bd1)
+| # | Module | Phase |
+|---|--------|-------|
+| 01 | [Information Gathering](#1-information-gathering) | Reconnaissance |
+| 02 | [Footprinting & Scanning](#2-footprinting--scanning) | Reconnaissance |
+| 03 | [Enumeration](#3-enumeration) | Reconnaissance |
+| 04 | [Vulnerability Assessment](#4-vulnerability-assessment) | Assessment |
+| 05 | [Auditing Fundamentals](#5-auditing-fundamentals) | Assessment |
+| 06 | [System / Host-Based Attacks](#6-system--host-based-attacks) | Exploitation |
+| 07 | [Network-Based Attacks](#7-network-based-attacks) | Exploitation |
+| 08 | [The Metasploit Framework](#8-the-metasploit-framework) | Exploitation |
+| 09 | [Exploitation](#9-exploitation) | Exploitation |
+| 10 | [Post-Exploitation](#10-post-exploitation) | Post-Exploitation |
+| 11 | [Social Engineering](#11-social-engineering) | Exploitation |
+| 12 | [Web Application Penetration Testing](#12-web-application-penetration-testing) | Web |
 
 ---
 
-## 6. System / Host-based Attacks
+## 🔍 Phase 1 — Reconnaissance & Assessment
 
-This part explores **attacks targeting operating systems and applications**. You learn about privilege escalation, weak password policies, misconfigurations, and local exploits. Tools like **Metasploit, PowerShell, and Mimikatz** are commonly used.
+### 1. Information Gathering
 
-**Goal:** Gain control or escalate privileges on a compromised system.
+The **first step** in any penetration test. Collect maximum intelligence about the target using passive methods — without directly touching or alerting it.
 
-**Link:** [https://dharmendrastm.medium.com/ejpt-3-1-system-host-based-attacks-956cfbe914bb](https://dharmendrastm.medium.com/ejpt-3-1-system-host-based-attacks-956cfbe914bb)
+**Key Concepts:** OSINT, DNS Recon, Email Harvesting, Social Media Recon
 
----
+**Tools:**
+- `whois` — Domain registration info
+- `nslookup` / `dig` — DNS lookup
+- `Maltego` — Visual OSINT mapping
+- `Recon-ng` — Modular recon framework
+- `Shodan` — Internet-connected device search
+- `Google Dorks` — Advanced Google search operators
+- `theHarvester` — Email & subdomain harvesting
 
-## 7. Network-based Attacks
+🎯 **Goal:** Build an intelligence profile of the target before scanning or attacking.
 
-These attacks exploit **network protocols and configurations**. Techniques include sniffing, spoofing, and performing man-in-the-middle (MITM) attacks. Tools such as **Wireshark, Ettercap, and Responder** are used to intercept and manipulate traffic.
-
-**Goal:** Intercept, manipulate, or exploit network traffic for credentials or sensitive data.
-
-**Link:** [https://dharmendrastm.medium.com/ejpt-3-2-network-based-attacks-6f0d4d41b455](https://dharmendrastm.medium.com/ejpt-3-2-network-based-attacks-6f0d4d41b455)
-
----
-
-## 8. The Metasploit Framework
-
-Metasploit is a powerful exploitation framework that simplifies vulnerability research and exploitation. It allows you to use modules like **exploit, payload, post, and auxiliary** to perform attacks. It’s ideal for automating penetration tests.
-
-**Goal:** Use Metasploit to exploit vulnerabilities and manage post-exploitation sessions.
-
-**Link:** [https://dharmendrastm.medium.com/ejpt-3-3-the-metasploit-framework-24439d1238c5](https://dharmendrastm.medium.com/ejpt-3-3-the-metasploit-framework-24439d1238c5)
+📖 [Read Full Notes](https://dharmendrastm.medium.com/ejpt-1-1-information-gathering-0423a9bbc06e)
 
 ---
 
-## 9. Exploitation
+### 2. Footprinting & Scanning
 
-This module teaches how to **use exploits to gain access** to vulnerable systems. You’ll learn manual and automated exploitation using public exploits, payload generation, and shell management.
+Active probing of the target to identify open ports, running services, and OS details. Creates a clear **attack surface map**.
 
-**Goal:** Gain access and demonstrate impact through controlled exploitation.
+**Key Concepts:** Port Scanning, OS Fingerprinting, Service Detection, Banner Grabbing
 
-**Link:** [https://dharmendrastm.medium.com/ejpt-3-4-exploitation-d68f291951c8](https://dharmendrastm.medium.com/ejpt-3-4-exploitation-d68f291951c8)
+**Tools:**
+- `Nmap` — The go-to port scanner
+- `Masscan` — Ultra-fast port scanning
+- `Netdiscover` — Network host discovery
+- `Zenmap` — GUI front-end for Nmap
 
----
+🎯 **Goal:** Map the target network and identify all potential entry points.
 
-## 10. Post-Exploitation
-
-Once access is obtained, post-exploitation focuses on **maintaining control**, collecting credentials, and pivoting within the network. This step also involves cleaning up traces to remain undetected.
-
-**Goal:** Understand how attackers maintain persistence and gather intelligence after a breach.
-
-**Link:** [https://dharmendrastm.medium.com/ejpt-3-5-post-exploitation-0ae5db04ef11](https://dharmendrastm.medium.com/ejpt-3-5-post-exploitation-0ae5db04ef11)
+📖 [Read Full Notes](https://dharmendrastm.medium.com/ejpt-1-2-footprinting-scanning-f2f49b9564f5)
 
 ---
 
-## 11. Social Engineering
+### 3. Enumeration
 
-This module covers **human-based attacks**, such as phishing, pretexting, and baiting. It explores psychological manipulation and defense measures. Tools like **SET (Social Engineering Toolkit)** are introduced.
+A **deeper level of interaction** with discovered services. Extract usernames, shares, directories, and configuration details that can lead to exploitation.
 
-**Goal:** Understand and defend against manipulation-based attacks.
+**Key Protocols:** SMB, SNMP, DNS, LDAP, FTP, HTTP
 
-**Link:** [https://dharmendrastm.medium.com/ejpt-3-6-social-engineering-ebb6e959b04f](https://dharmendrastm.medium.com/ejpt-3-6-social-engineering-ebb6e959b04f)
+**Tools:**
+- `enum4linux` — SMB/NetBIOS enumeration
+- `SNMPwalk` — SNMP data extraction
+- `rpcclient` — RPC-based Windows enumeration
+- `Dirbuster` / `Gobuster` — Web directory brute-force
+- `NBTscan` — NetBIOS name scanning
+
+🎯 **Goal:** Discover usernames, directories, and misconfigurations valuable for exploitation.
+
+📖 [Read Full Notes](https://dharmendrastm.medium.com/ejpt-1-3-enumeration-bf658c341ac1)
 
 ---
 
-## 12. Web Application Penetration Testing
+### 4. Vulnerability Assessment
 
-This section focuses on **web-based vulnerabilities** such as **SQL Injection, XSS, CSRF, authentication bypass, and file inclusion**. Tools like **Burp Suite, OWASP ZAP, Nikto, and SQLmap** are used.
+Systematically identify, classify, and prioritize security weaknesses in systems and networks using automated scanners and manual analysis.
 
-**Goal:** Identify and exploit vulnerabilities in web applications safely and ethically.
+**Key Concepts:** CVE Identification, CVSS Scoring, False Positive Analysis
 
-**Link:** [https://dharmendrastm.medium.com/ejpt-4-1-web-application-penetration-testing-1fc636e6cabe](https://dharmendrastm.medium.com/ejpt-4-1-web-application-penetration-testing-1fc636e6cabe)
+**Tools:**
+- `Nessus` — Enterprise vulnerability scanner
+- `OpenVAS` — Open-source vuln scanner
+- `Nmap NSE Scripts` — Lightweight vuln checks
+- `Nikto` — Web server scanner
+
+**Severity Levels:** 🔴 Critical → 🟠 High → 🟡 Medium → 🟢 Low
+
+🎯 **Goal:** Find and classify vulnerabilities before attempting any exploitation.
+
+📖 [Read Full Notes](https://dharmendrastm.medium.com/ejpt-1-4-vulnerability-assessment-85ed97372f20)
 
 ---
 
-## Conclusion
+### 5. Auditing Fundamentals
 
-These notes collectively cover the full **penetration testing lifecycle** — from reconnaissance to reporting. Mastering these topics ensures strong foundational knowledge for real-world cybersecurity engagements and eJPT certification success.
+Analyze the effectiveness of an organization's security controls. Covers log analysis, compliance checks, and policy reviews.
+
+**Key Concepts:** Log Analysis, CIS/NIST Compliance, File Integrity Monitoring, Access Control Review
+
+**Tools:**
+- `Lynis` — Linux system auditing
+- `Chkrootkit` — Rootkit detection
+- `Auditd` — Linux audit daemon
+
+🎯 **Goal:** Verify that systems meet security best practices and organizational policies.
+
+📖 [Read Full Notes](https://dharmendrastm.medium.com/ejpt-2-1-auditing-fundamentals-d59d9b6d5bd1)
+
+---
+
+## ⚔️ Phase 2 — Exploitation
+
+### 6. System / Host-Based Attacks
+
+Attacks targeting the OS and application layer. Covers privilege escalation on both **Windows and Linux** systems.
+
+**Key Concepts:** Privilege Escalation, UAC Bypass, Kernel Exploits, Password Cracking
+
+**Tools:**
+- `Metasploit` — Exploitation framework
+- `PowerShell` — Windows post-exploitation
+- `Mimikatz` — Credential dumping on Windows
+- `LinPEAS` / `WinPEAS` — Privilege escalation enumeration
+
+🎯 **Goal:** Gain elevated (root/SYSTEM) privileges on a compromised machine.
+
+📖 [Read Full Notes](https://dharmendrastm.medium.com/ejpt-3-1-system-host-based-attacks-956cfbe914bb)
+
+---
+
+### 7. Network-Based Attacks
+
+Exploit weaknesses in network protocols to intercept traffic and harvest credentials.
+
+**Key Concepts:** ARP Poisoning, MITM, DNS Spoofing, LLMNR/NBT-NS Poisoning
+
+**Tools:**
+- `Wireshark` — Packet capture & analysis
+- `Ettercap` — MITM attack suite
+- `Responder` — LLMNR/NetBIOS poisoning
+- `Bettercap` — Modern network attack framework
+
+🎯 **Goal:** Intercept, manipulate, or exploit network traffic for credentials or sensitive data.
+
+📖 [Read Full Notes](https://dharmendrastm.medium.com/ejpt-3-2-network-based-attacks-6f0d4d41b455)
+
+---
+
+### 8. The Metasploit Framework
+
+Industry-standard exploitation framework. Automates vulnerability research and exploitation with a massive library of modules.
+
+**Module Types:**
+| Type | Purpose |
+|------|---------|
+| `exploit` | Attack a specific vulnerability |
+| `payload` | Code executed after exploitation |
+| `auxiliary` | Scanning, fuzzing, enumeration |
+| `post` | Post-exploitation actions |
+
+**Tools:**
+- `msfconsole` — Main CLI interface
+- `msfvenom` — Payload generation
+- `meterpreter` — Advanced post-exploitation shell
+
+🎯 **Goal:** Use Metasploit to exploit vulnerabilities and manage post-exploitation sessions.
+
+📖 [Read Full Notes](https://dharmendrastm.medium.com/ejpt-3-3-the-metasploit-framework-24439d1238c5)
+
+---
+
+### 9. Exploitation
+
+Apply manual and automated techniques to gain unauthorized access to vulnerable systems.
+
+**Key Concepts:** Reverse Shells, Bind Shells, Payload Staging, Public Exploit Usage
+
+**Tools:**
+- `Metasploit` — Automated exploitation
+- `SearchSploit` / `ExploitDB` — Public exploit database
+- `msfvenom` — Custom payload generation
+- `netcat` — Manual shell handling
+
+🎯 **Goal:** Gain initial foothold and demonstrate real-world impact through controlled exploitation.
+
+📖 [Read Full Notes](https://dharmendrastm.medium.com/ejpt-3-4-exploitation-d68f291951c8)
+
+---
+
+### 10. Post-Exploitation
+
+Activities after gaining access — maintaining persistence, moving laterally, and exfiltrating data.
+
+**Key Concepts:** Persistence, Lateral Movement, Pivoting, Credential Dumping, Covering Tracks
+
+**Tools:**
+- `Meterpreter` — Advanced post-exploitation shell
+- `BloodHound` — Active Directory attack path mapping
+- `Mimikatz` — Windows credential extraction
+- `Empire` — PowerShell post-exploitation framework
+
+🎯 **Goal:** Demonstrate how attackers maintain long-term persistence and gather intelligence post-breach.
+
+📖 [Read Full Notes](https://dharmendrastm.medium.com/ejpt-3-5-post-exploitation-0ae5db04ef11)
+
+---
+
+### 11. Social Engineering
+
+Human-based attack vectors that exploit psychological weaknesses rather than technical flaws.
+
+**Attack Types:** Phishing, Spear Phishing, Vishing, Pretexting, Baiting, Impersonation
+
+**Tools:**
+- `SET` (Social Engineering Toolkit) — Automated SE attack framework
+- `GoPhish` — Phishing campaign management
+- `BeEF` — Browser exploitation framework
+
+🎯 **Goal:** Understand, simulate, and build defenses against human manipulation attacks.
+
+📖 [Read Full Notes](https://dharmendrastm.medium.com/ejpt-3-6-social-engineering-ebb6e959b04f)
+
+---
+
+## 🌐 Phase 3 — Web Application Testing
+
+### 12. Web Application Penetration Testing
+
+Test web applications against the **OWASP Top 10** and beyond. Covers injection attacks, broken auth, access control flaws, and client-side vulnerabilities.
+
+**Key Vulnerabilities:**
+- 💉 SQL Injection (SQLi)
+- 🖥️ Cross-Site Scripting (XSS) — Reflected & Stored
+- 🔄 Cross-Site Request Forgery (CSRF)
+- 📁 File Inclusion (LFI / RFI)
+- 🔐 Authentication Bypass
+- 🚪 IDOR / Broken Access Control
+
+**Tools:**
+- `Burp Suite` — The industry standard web proxy
+- `OWASP ZAP` — Open-source web app scanner
+- `SQLmap` — Automated SQL injection tool
+- `Nikto` — Web server misconfiguration scanner
+- `Dirbuster` / `Gobuster` — Directory enumeration
+
+🎯 **Goal:** Identify and safely exploit vulnerabilities in web applications for ethical security assessments.
+
+📖 [Read Full Notes](https://dharmendrastm.medium.com/ejpt-4-1-web-application-penetration-testing-1fc636e6cabe)
+
+---
+
+## 🗺️ The Penetration Testing Lifecycle
+
+```
+[Recon] → [Scanning] → [Enumeration] → [Vuln Assessment]
+                                                ↓
+                                         [Exploitation]
+                                                ↓
+                                      [Post-Exploitation]
+                                                ↓
+                                           [Reporting]
+```
+
+---
+
+## 💡 Quick Exam Tips
+
+- ✅ eJPT is a **practical, hands-on** exam — not just theory
+- ✅ Know your **Nmap flags** inside out (`-sV`, `-sC`, `-A`, `-p-`)
+- ✅ Practice **Metasploit** workflows — `search`, `use`, `set`, `run`
+- ✅ Understand **SMB enumeration** thoroughly (very common in exam)
+- ✅ Learn basic **pivoting** with Metasploit's `route` command
+- ✅ Web attacks: focus on **SQLi and basic XSS** for the exam
+
+---
+
+## 📚 Resources
+
+| Resource | Link |
+|----------|------|
+| eJPT Official Page | [ine.com/learning/certifications/internal/elearnsecurity-junior-penetration-tester-cert](https://ine.com) |
+| Full Notes Blog | [dharmendrastm.medium.com](https://dharmendrastm.medium.com) |
+| Exploit Database | [exploit-db.com](https://www.exploit-db.com) |
+| OWASP Top 10 | [owasp.org/www-project-top-ten](https://owasp.org/www-project-top-ten/) |
+| TryHackMe Practice | [tryhackme.com](https://tryhackme.com) |
+| HackTheBox Practice | [hackthebox.com](https://www.hackthebox.com) |
+
+---
+
+## 🙌 Credits
+
+Notes compiled and maintained by **Dharmendra** — aspiring cybersecurity professional and eJPT candidate.
+
+> *"The quieter you become, the more you are able to hear."* — Kali Linux motto
+
+---
+
+⭐ **Star this repo** if it helped you in your eJPT journey!
